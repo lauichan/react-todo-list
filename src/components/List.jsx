@@ -1,33 +1,25 @@
-function WorkingList({ list }) {
+function List({ title, type, list, setlist }) {
   let workingList = list.filter((item) => item.isDone === false);
-  return (
-    <ul className="list working">
-      {workingList.map((item) => {
-        return (
-          <li className="card" key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{item.content}</p>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
-function DoneList({ list }) {
   let doneList = list.filter((item) => item.isDone === true);
+  let arr = type === "working" ? workingList : doneList;
   return (
-    <ul className="list done">
-      {doneList.map((item) => {
-        return (
-          <li className="card" key={item.id}>
-            <h3>{item.title}</h3>
-            <p>{item.content}</p>
-          </li>
-        );
-      })}
-    </ul>
+    <section>
+      <h2>{title}</h2>
+      <ul className={type}>
+        {arr.map((item) => {
+          return (
+            <li className="todo" key={item.id}>
+              <input type="checkbox" placeholder="완료" />
+              <details>
+                <summary>{item.title}</summary>
+                <p>{item.content}</p>
+              </details>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
-export { WorkingList, DoneList };
+export default List;

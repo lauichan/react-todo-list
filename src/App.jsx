@@ -2,7 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import { Header, Footer } from "./components/Layout";
 import Form from "./components/Form";
-import { WorkingList, DoneList } from "./components/List";
+import List from "./components/List";
 import todoList from "./data";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
       <Header />
       <main>
         <Form list={list} setlist={setList} />
-        <WorkingList list={list} />
-        <DoneList list={list} />
+        <List title="진행중" type="working" list={list} setlist={setList} />
+        <List title="완료" type="done" list={list} setlist={setList} />
       </main>
       <Footer />
     </div>

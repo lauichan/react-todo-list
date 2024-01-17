@@ -42,7 +42,9 @@ function Form({ list, setlist }) {
         value={content}
         onChange={contentChangeHandler}
       />
-      <button onClick={addTask}>추가하기</button>
+      <button type="submit" onClick={addTask}>
+        추가하기
+      </button>
     </form>
   );
 }
