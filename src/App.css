@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+header > h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+footer {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  margin-top: auto;
+}
+
+.list {
+  list-style: none;
+}
