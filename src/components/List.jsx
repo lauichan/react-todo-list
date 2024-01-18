@@ -21,7 +21,7 @@ function List({ title, type, list, setlist }) {
                 <p>{content}</p>
               </details>
               <span className="is-done">
-                <label htmlFor={id}>{type === "done" ? "완료" : "취소"}</label>
+                <label htmlFor={id}>{type === "done" ? "취소" : "완료"}</label>
                 <input
                   id={id}
                   type="checkbox"
