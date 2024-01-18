@@ -19,21 +19,22 @@ function Form({ list, setlist }) {
     setContent(event.target.value);
   };
 
-  const addTask = (e) => {
-    e.preventDefault();
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
     setlist([...list, newList]);
     setTitle("");
     setContent("");
   };
 
   return (
-    <form className="new-list">
+    <form className="new-list" onSubmit={onSubmitHandler}>
       <input
         type="text"
         name="title"
         placeholder="제목"
         value={title}
         onChange={titleChangeHandler}
+        required
       />
       <textarea
         type="text"
@@ -41,10 +42,9 @@ function Form({ list, setlist }) {
         placeholder="내용"
         value={content}
         onChange={contentChangeHandler}
+        required
       />
-      <button type="submit" onClick={addTask}>
-        추가하기
-      </button>
+      <button type="submit">추가하기</button>
     </form>
   );
 }
