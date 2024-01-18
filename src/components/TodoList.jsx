@@ -20,6 +20,9 @@ function List({ title, type, list, setlist }) {
                 <summary>{title}</summary>
                 <p>{content}</p>
               </details>
+              <button className="delete-btn" type="button">
+                삭제
+              </button>
               <span className="is-done">
                 <label htmlFor={id}>{type === "done" ? "취소" : "완료"}</label>
                 <input

@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import { Header, Footer } from "./components/Layout";
-import Form from "./components/Form";
-import List from "./components/List";
+import Form from "./components/TodoForm";
+import List from "./components/TodoList";
 import todoList from "./data";
 
 function App() {
