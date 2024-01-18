@@ -48,10 +48,7 @@ button {
   outline: none;
   color: inherit;
   font-family: sans-serif;
-}
-
-button:hover {
-  background-color: #ddd;
+  background-color: white;
 }
 
 h1 {
@@ -122,7 +119,6 @@ summary {
   position: relative;
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
 }
 
 .todo > details {
@@ -145,8 +141,21 @@ summary {
   border-top: 1px solid #d0d7de;
 }
 
+.todo .delete-btn {
+  font-size: 90%;
+}
+
+.todo .delete-btn:hover {
+  font-weight: bold;
+}
+
 .is-done {
   padding: 0.7rem 1rem;
+  font-size: 90%;
+}
+
+.is-done:hover {
+  font-weight: bold;
 }
 
 .is-done > * {
