@@ -5,7 +5,7 @@ function Form({ list, setlist }) {
   let [content, setContent] = useState("");
 
   const newList = {
-    id: list.length + 1,
+    id: list.length,
     title,
     content,
     isDone: false,

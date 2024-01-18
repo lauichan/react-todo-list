@@ -4,8 +4,10 @@ function List({ title, type, list, setlist }) {
   let arr = type === "working" ? workingList : doneList;
 
   const isDoneHandler = (event) => {
+    console.log(event.target);
     let copyList = [...list];
     copyList[event.target.id].isDone = !(event.target.value === "true");
+    console.log(copyList);
     setlist(copyList);
   };
 
