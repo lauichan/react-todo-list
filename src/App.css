@@ -122,8 +122,19 @@ summary {
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 0.7rem 1rem;
   gap: 1rem;
+}
+
+.todo > details {
+  flex-grow: 1;
+}
+
+.todo > details > summary {
+  padding: 0.7rem 1rem;
+}
+
+.todo > details > p {
+  padding: 0.7rem 1rem;
 }
 
 .working li:not(:last-child) {
@@ -134,8 +145,8 @@ summary {
   border-top: 1px solid #d0d7de;
 }
 
-.todo p {
-  padding-top: 1rem;
+.is-done {
+  padding: 0.7rem 1rem;
 }
 
 .is-done > * {
