@@ -12,7 +12,8 @@
 
 ```bash
 ├── components
-│   ├── Form.jsx      # TodoList에 제목과 내용을 입력할 form
-│   ├── Layout.jsx    # 사이트 헤더와 푸터
-│   └── List.jsx      # TodoList Working, Done 목록 출력하는 section
+│   ├── Layout.jsx        # 사이트 헤더와 푸터
+│   ├── TodoForm.jsx      # TodoList에 제목과 내용을 입력할 form
+│   └── TodoList.jsx      # TodoList Working, Done 목록 출력하는 section
+└── App.jsx
 ```
