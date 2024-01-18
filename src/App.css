@@ -41,12 +41,17 @@ section {
 }
 
 input,
+textarea,
 button {
   font-size: 100%;
   border: none;
   outline: none;
-  padding: 0.7rem 1rem;
   color: inherit;
+  font-family: sans-serif;
+}
+
+button:hover {
+  background-color: #ddd;
 }
 
 h1 {
@@ -66,21 +71,35 @@ h2 {
   background: #f6f8fa;
 }
 
-.newlist {
+.new-list {
+  position: relative;
   display: flex;
-  border: 1px solid #d0d7de;
-  border-radius: 6px;
+  flex-direction: column;
   overflow: hidden;
 }
 
-.newlist > input[name="content"] {
-  flex-grow: 1;
-  border-left: 1px solid #d0d7de;
+.new-list > input {
+  padding: 0.7rem 1rem;
+  border: 1px solid #d0d7de;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  border-bottom: 0;
 }
 
-.newlist > button {
-  margin-left: auto;
-  border-left: 1px solid #d0d7de;
+.new-list > textarea {
+  padding: 0.7rem 1rem;
+  min-height: 100px;
+  border: 1px solid #d0d7de;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.new-list > button {
+  margin: 0.5rem 0 0.5rem auto;
+  padding: 0.5rem;
+  border-radius: 6px;
+  background-color: #1f883d;
+  color: white;
 }
 
 summary {
@@ -89,7 +108,9 @@ summary {
 }
 
 .todo {
+  position: relative;
   display: flex;
+  justify-content: space-between;
   padding: 0.7rem 1rem;
   gap: 1rem;
 }
@@ -100,4 +121,8 @@ summary {
 
 .todo p {
   padding-top: 1rem;
+}
+
+.is-done > * {
+  cursor: pointer;
 }

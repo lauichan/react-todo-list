@@ -27,7 +27,7 @@ function Form({ list, setlist }) {
   };
 
   return (
-    <form className="newlist">
+    <form className="new-list">
       <input
         type="text"
         name="title"
@@ -35,7 +35,7 @@ function Form({ list, setlist }) {
         value={title}
         onChange={titleChangeHandler}
       />
-      <input
+      <textarea
         type="text"
         name="content"
         placeholder="내용"
