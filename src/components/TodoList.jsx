@@ -9,6 +9,11 @@ function List({ title, type, list, setlist }) {
     setlist(copyList);
   };
 
+  const deleteTask = (id) => {
+    const deletedList = list.filter((item) => item.id !== id);
+    setlist(deletedList);
+  };
+
   return (
     <section className="list">
       <h2>{title}</h2>
@@ -20,7 +25,11 @@ function List({ title, type, list, setlist }) {
                 <summary>{title}</summary>
                 <p>{content}</p>
               </details>
-              <button className="delete-btn" type="button">
+              <button
+                className="delete-btn"
+                type="button"
+                onClick={() => deleteTask(id)}
+              >
                 삭제
               </button>
               <span className="is-done">
