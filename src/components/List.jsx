@@ -1,18 +1,16 @@
 function List({ title, type, list, setlist }) {
-  let workingList = list.filter((item) => item.isDone === false);
-  let doneList = list.filter((item) => item.isDone === true);
-  let arr = type === "working" ? workingList : doneList;
+  const workingList = list.filter((item) => item.isDone === false);
+  const doneList = list.filter((item) => item.isDone === true);
+  const arr = type === "working" ? workingList : doneList;
 
   const isDoneHandler = (event) => {
-    console.log(event.target);
     let copyList = [...list];
     copyList[event.target.id].isDone = !(event.target.value === "true");
-    console.log(copyList);
     setlist(copyList);
   };
 
   return (
-    <section>
+    <section className="list">
       <h2>{title}</h2>
       <ul className={type}>
         {arr.map(({ id, title, content, isDone }) => {
