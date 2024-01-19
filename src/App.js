@@ -1,30 +1,51 @@
 import "./App.css";
 import { useState } from "react";
 
-function TaskManage({ id, isDone }) {
+function TaskManage({ id, isDone, deleteTask, changeTaskState }) {
   const taskState = isDone ? "완료" : "취소";
+
+  const deleteClickHandler = (id) => {
+    deleteTask(id);
+  };
+
+  const stateClickHandler = () => {
+    changeTaskState(id, isDone);
+  };
+
   return (
     <div>
-      <button>삭제 {id}</button>
-      <button>{taskState}</button>
+      <button onClick={() => deleteClickHandler(id)}>삭제</button>
+      <button onClick={stateClickHandler}>{taskState}</button>
     </div>
   );
 }
 
-function TaskRow({ task }) {
+function TaskRow({ task, deleteTask, changeTaskState }) {
   return (
     <li>
       <h3>{task.title}</h3>
       {task.content}
-      <TaskManage id={task.id} isDone={task.isDone} />
+      <TaskManage
+        id={task.id}
+        isDone={task.isDone}
+        deleteTask={deleteTask}
+        changeTaskState={changeTaskState}
+      />
     </li>
   );
 }
 
-function TaskTable({ tasks, children }) {
+function TaskTable({ tasks, children, deleteTask, changeTaskState }) {
   let rows = [];
   tasks.forEach((task) => {
-    rows.push(<TaskRow key={task.id} task={task} />);
+    rows.push(
+      <TaskRow
+        key={task.id}
+        task={task}
+        deleteTask={deleteTask}
+        changeTaskState={changeTaskState}
+      />
+    );
   });
 
   return (
@@ -99,11 +120,33 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  const changeTaskState = (id, bool) => {
+    let copyTasks = [...tasks];
+    copyTasks[id].isDone = !bool;
+    setTasks(copyTasks);
+  };
+
   return (
     <>
       <TaskForm addTask={addTask} />
-      <TaskTable tasks={workingList}>Working</TaskTable>
-      <TaskTable tasks={doneList}>Done</TaskTable>
+      <TaskTable
+        tasks={workingList}
+        deleteTask={deleteTask}
+        changeTaskState={changeTaskState}
+      >
+        Working
+      </TaskTable>
+      <TaskTable
+        tasks={doneList}
+        deleteTask={deleteTask}
+        changeTaskState={changeTaskState}
+      >
+        Done
+      </TaskTable>
     </>
   );
 }
