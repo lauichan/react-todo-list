@@ -7,7 +7,14 @@ function TaskList({ tasks, children, deleteTask, changeTaskState }) {
         task={task}
         deleteTask={deleteTask}
         changeTaskState={changeTaskState}
-      />
+      >
+        <TaskManageBtn
+          id={task.id}
+          isDone={task.isDone}
+          deleteTask={deleteTask}
+          changeTaskState={changeTaskState}
+        />
+      </TaskCard>
     );
   });
 
@@ -19,17 +26,12 @@ function TaskList({ tasks, children, deleteTask, changeTaskState }) {
   );
 }
 
-function TaskCard({ task, deleteTask, changeTaskState }) {
+function TaskCard({ task, children }) {
   return (
     <li>
       <h3>{task.title}</h3>
       {task.content}
-      <TaskManageBtn
-        id={task.id}
-        isDone={task.isDone}
-        deleteTask={deleteTask}
-        changeTaskState={changeTaskState}
-      />
+      {children}
     </li>
   );
 }
