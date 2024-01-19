@@ -55,7 +55,7 @@ function TaskList({ tasks, children, deleteTask, changeTaskState }) {
 
   return (
     <section className="todo-section">
-      <h2>{children}</h2>
+      <h2 className={children.toLowerCase()}>{children}</h2>
       <ul className="todo-list">{rows}</ul>
     </section>
   );

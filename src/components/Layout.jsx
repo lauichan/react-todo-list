@@ -1,7 +1,9 @@
 function Header() {
   return (
     <header>
-      <h1>Todo List</h1>
+      <h1>
+        <a href="/">Todo List</a>
+      </h1>
     </header>
   );
 }
