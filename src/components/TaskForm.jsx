@@ -18,7 +18,7 @@ function TaskForm({ addTask }) {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
+    <form className="todo-form" onSubmit={onSubmitHandler}>
       <input
         type="text"
         value={title}

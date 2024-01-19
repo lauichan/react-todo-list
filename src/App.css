@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  color: #444;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -24,6 +28,7 @@ button {
   border: none;
   background: white;
   font-size: 90%;
+  cursor: pointer;
 }
 
 header {
@@ -32,43 +37,44 @@ header {
   height: 100px;
 }
 
-h1 {
+header > h1 {
   font-size: 2rem;
   font-weight: bold;
 }
 
-form {
+.todo-form {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.7rem;
   border: 1px solid #ddd;
   border-radius: 10px;
   width: 100%;
   gap: 1rem;
 }
 
-form > textarea {
+.todo-form > textarea {
   resize: vertical;
 }
 
-form > button {
-  background: #f1f1f1;
-  padding: 0.2rem 0.5rem;
+.todo-form > button {
+  background: #0d6efd;
+  padding: 0.4rem 0.7rem;
   border-radius: 4px;
   margin-left: auto;
+  color: white;
 }
 
-section {
+.todo-section {
   margin: 3rem 0;
 }
 
-h2 {
+.todo-section > h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 1rem 0;
 }
 
-ul {
+.todo-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(auto-fill, 1fr);
@@ -78,25 +84,39 @@ ul {
   list-style: none;
 }
 
-ul > li {
+.todo-list > li {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.7rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-ul > li > div {
+.todo-list > li > h3 {
+  font-weight: bold;
+  margin-top: 0.5rem;
+}
+
+.todo-list > li > div {
   margin-top: auto;
   margin-left: auto;
 }
 
-ul > li > div > button {
-  background: #f1f1f1;
+.todo-list > li > div > button {
   padding: 0.2rem 0.5rem;
   margin-left: 0.5rem;
   border-radius: 4px;
+}
+
+.todo-list > li > div > button {
+  background: #198754;
+  color: white;
+}
+
+.todo-list > li > div > .delete {
+  background: #dc3545;
+  color: white;
 }
 
 footer {

@@ -11,7 +11,11 @@ function TaskManage({ id, isDone, deleteTask, changeTaskState }) {
 
   return (
     <div>
-      <button type="button" onClick={() => deleteClickHandler(id)}>
+      <button
+        className="delete"
+        type="button"
+        onClick={() => deleteClickHandler(id)}
+      >
         삭제
       </button>
       <button type="button" onClick={stateClickHandler}>
@@ -50,9 +54,9 @@ function TaskList({ tasks, children, deleteTask, changeTaskState }) {
   });
 
   return (
-    <section>
+    <section className="todo-section">
       <h2>{children}</h2>
-      <ul>{rows}</ul>
+      <ul className="todo-list">{rows}</ul>
     </section>
   );
 }
