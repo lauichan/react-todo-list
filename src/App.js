@@ -1,12 +1,13 @@
 import "./App.css";
+import { useState } from "react";
 
 function TaskManage({ id, isDone }) {
   const taskState = isDone ? "완료" : "취소";
   return (
-    <>
+    <div>
       <button>삭제 {id}</button>
       <button>{taskState}</button>
-    </>
+    </div>
   );
 }
 
@@ -34,17 +35,35 @@ function TaskTable({ tasks, children }) {
   );
 }
 
-function TaskForm() {
+function TaskForm({ addTask }) {
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const getTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const getContent = (event) => {
+    setContent(event.target.value);
+  };
+
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+    addTask(title, content);
+  };
+
   return (
-    <form>
-      <input type="text"></input>
-      <input type="text"></input>
+    <form onSubmit={onSubmitHandler}>
+      <input type="text" value={title} onChange={getTitle}></input>
+      {title}
+      <input type="text" value={content} onChange={getContent}></input>
+      {content}
       <button type="submit">할 일 추가</button>
     </form>
   );
 }
 
-let todoList = [
+let TODOLIST = [
   {
     id: 0,
     title: "240116 TIL 쓰기",
@@ -66,11 +85,23 @@ let todoList = [
 ];
 
 function App() {
-  const workingList = todoList.filter((task) => task.isDone === false);
-  const doneList = todoList.filter((task) => task.isDone === true);
+  const [tasks, setTasks] = useState(TODOLIST);
+  const workingList = tasks.filter((task) => task.isDone === false);
+  const doneList = tasks.filter((task) => task.isDone === true);
+
+  const addTask = (title, content) => {
+    let newTask = {
+      id: tasks.length,
+      title,
+      content,
+      isDone: false,
+    };
+    setTasks([...tasks, newTask]);
+  };
+
   return (
     <>
-      <TaskForm />
+      <TaskForm addTask={addTask} />
       <TaskTable tasks={workingList}>Working</TaskTable>
       <TaskTable tasks={doneList}>Done</TaskTable>
     </>
