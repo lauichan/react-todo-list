@@ -1,21 +1,16 @@
-function TaskList({ tasks, children, deleteTask, changeTaskState }) {
+function TaskList({ tasks, title, deleteTask, changeTaskState }) {
   let rows = [];
   tasks.forEach((task) => {
     rows.push(
       <TaskCard key={task.id} task={task}>
-        <TaskManageBtn
-          id={task.id}
-          isDone={task.isDone}
-          deleteTask={deleteTask}
-          changeTaskState={changeTaskState}
-        />
+        <TaskManageBtn id={task.id} isDone={task.isDone} deleteTask={deleteTask} changeTaskState={changeTaskState} />
       </TaskCard>
     );
   });
 
   return (
     <section className="todo-section">
-      <h2 className={children.toLowerCase()}>{children}</h2>
+      <h2 className={title.toLowerCase()}>{title}</h2>
       <ul className="todo-list">{rows}</ul>
     </section>
   );
