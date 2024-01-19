@@ -1,5 +1,5 @@
 function TaskManage({ id, isDone, deleteTask, changeTaskState }) {
-  const taskState = isDone ? "완료" : "취소";
+  const taskState = isDone ? "취소" : "완료";
 
   const deleteClickHandler = () => {
     deleteTask(id);

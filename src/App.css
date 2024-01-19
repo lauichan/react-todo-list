@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -8,7 +12,9 @@
   padding: 0 1.5rem;
 }
 
-input {
+input,
+textarea {
+  font-family: sans-serif;
   border: none;
   font-size: 100%;
   outline: none;
@@ -37,8 +43,12 @@ form {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: calc(100% / 3 - 3rem);
+  width: 100%;
   gap: 1rem;
+}
+
+form > textarea {
+  resize: vertical;
 }
 
 form > button {

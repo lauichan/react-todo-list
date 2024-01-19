@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function TaskForm({ addTask }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -23,12 +25,12 @@ function TaskForm({ addTask }) {
         onChange={getTitle}
         placeholder="제목"
       ></input>
-      <input
+      <textarea
         type="text"
         value={content}
         onChange={getContent}
         placeholder="내용"
-      ></input>
+      ></textarea>
       <button type="submit">할 일 추가</button>
     </form>
   );
