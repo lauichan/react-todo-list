@@ -2,12 +2,7 @@ function TaskList({ tasks, children, deleteTask, changeTaskState }) {
   let rows = [];
   tasks.forEach((task) => {
     rows.push(
-      <TaskCard
-        key={task.id}
-        task={task}
-        deleteTask={deleteTask}
-        changeTaskState={changeTaskState}
-      >
+      <TaskCard key={task.id} task={task}>
         <TaskManageBtn
           id={task.id}
           isDone={task.isDone}
