@@ -12,13 +12,13 @@ function TaskForm({ addTask }) {
     setContent(event.target.value);
   };
 
-  const onSubmitHandler = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     addTask(title, content);
   };
 
   return (
-    <form className="todo-form" onSubmit={onSubmitHandler}>
+    <form className="todo-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}

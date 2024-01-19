@@ -37,24 +37,20 @@ function TaskCard({ task, deleteTask, changeTaskState }) {
 function TaskManageBtn({ id, isDone, deleteTask, changeTaskState }) {
   const taskState = isDone ? "취소" : "완료";
 
-  const deleteClickHandler = () => {
+  const handleDeleteBtn = () => {
     !window.confirm("삭제 확인") || deleteTask(id);
   };
 
-  const stateClickHandler = () => {
+  const handleIsDoneBtn = () => {
     changeTaskState(id, isDone);
   };
 
   return (
     <div>
-      <button
-        className="delete"
-        type="button"
-        onClick={() => deleteClickHandler(id)}
-      >
+      <button className="delete" type="button" onClick={handleDeleteBtn}>
         삭제
       </button>
-      <button type="button" onClick={stateClickHandler}>
+      <button type="button" onClick={handleIsDoneBtn}>
         {taskState}
       </button>
     </div>
