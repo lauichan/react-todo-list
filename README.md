@@ -10,4 +10,11 @@
 
 ## 컴포넌트 분리
 
-다시 만들기
+```bash
+src
+├── components
+│   ├── Layout.jsx           # 페이지 header 와 footer
+│   ├── TaskForm.jsx         # Todo 추가 form
+│   └── TaskList.jsx         # Todo 리스트 출력 section
+└── App.jsx
+```
