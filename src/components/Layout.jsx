@@ -7,7 +7,11 @@ function Header() {
 }
 
 function Footer() {
-  return <footer>푸터</footer>;
+  return (
+    <footer>
+      <a href="https://github.com/lauichan/react-todo-list">Github</a>
+    </footer>
+  );
 }
 
 export { Header, Footer };
