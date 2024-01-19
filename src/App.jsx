@@ -5,7 +5,7 @@ import { Header, Footer } from "./components/Layout";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 
-let TODOLIST = [
+let todoList = [
   {
     id: 0,
     title: "240116 TIL 쓰기",
@@ -45,7 +45,7 @@ let TODOLIST = [
 ];
 
 function App() {
-  const [tasks, setTasks] = useState(TODOLIST);
+  const [tasks, setTasks] = useState(todoList);
   const workingList = tasks.filter((task) => task.isDone === false);
   const doneList = tasks.filter((task) => task.isDone === true);
 
@@ -60,13 +60,14 @@ function App() {
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    setTasks([...tasks].filter((task) => task.id !== id));
   };
 
   const changeTaskState = (id, bool) => {
-    let copyTasks = [...tasks];
-    copyTasks[id].isDone = !bool;
-    setTasks(copyTasks);
+    setTasks(
+      tasks.map((task) => (task.id === id ? { ...task, isDone: !bool } : task))
+    );
+    console.log(tasks);
   };
 
   return (

@@ -32,7 +32,7 @@ function TaskRow({ task, deleteTask, changeTaskState }) {
       {task.content}
       <TaskManage
         id={task.id}
-        isDone={task.isDone}
+        isDone={task?.isDone}
         deleteTask={deleteTask}
         changeTaskState={changeTaskState}
       />
