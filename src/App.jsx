@@ -1,5 +1,5 @@
-import "./App.css";
 import "./reset.css";
+import "./App.css";
 import { useState } from "react";
 import { Header, Footer } from "./components/Layout";
 
@@ -37,7 +37,7 @@ function TaskRow({ task, deleteTask, changeTaskState }) {
   );
 }
 
-function TaskTable({ tasks, children, deleteTask, changeTaskState }) {
+function TaskList({ tasks, children, deleteTask, changeTaskState }) {
   let rows = [];
   tasks.forEach((task) => {
     rows.push(
@@ -155,20 +155,20 @@ function App() {
       <Header />
       <main>
         <TaskForm addTask={addTask} />
-        <TaskTable
+        <TaskList
           tasks={workingList}
           deleteTask={deleteTask}
           changeTaskState={changeTaskState}
         >
           Working
-        </TaskTable>
-        <TaskTable
+        </TaskList>
+        <TaskList
           tasks={doneList}
           deleteTask={deleteTask}
           changeTaskState={changeTaskState}
         >
           Done
-        </TaskTable>
+        </TaskList>
       </main>
       <Footer />
     </div>
