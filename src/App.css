@@ -8,10 +8,54 @@
   padding: 0 1.5rem;
 }
 
+input {
+  border: none;
+  font-size: 100%;
+  outline: none;
+}
+
+button {
+  border: none;
+  background: white;
+  font-size: 90%;
+}
+
 header {
   display: flex;
   align-items: center;
   height: 100px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: calc(100% / 3 - 3rem);
+  gap: 1rem;
+}
+
+form > button {
+  background: #f1f1f1;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+section {
+  margin: 3rem 0;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 1rem 0;
 }
 
 ul {
@@ -30,10 +74,19 @@ ul > li {
   padding: 1rem;
   border: 1px solid #ddd;
   border-radius: 10px;
+  gap: 1rem;
 }
 
 ul > li > div {
   margin-top: auto;
+  margin-left: auto;
+}
+
+ul > li > div > button {
+  background: #f1f1f1;
+  padding: 0.2rem 0.5rem;
+  margin-left: 0.5rem;
+  border-radius: 4px;
 }
 
 footer {

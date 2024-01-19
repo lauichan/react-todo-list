@@ -1,5 +1,9 @@
 function Header() {
-  return <header>헤더</header>;
+  return (
+    <header>
+      <h1>Todo List</h1>
+    </header>
+  );
 }
 
 function Footer() {
