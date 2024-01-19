@@ -2,7 +2,7 @@ function TaskManage({ id, isDone, deleteTask, changeTaskState }) {
   const taskState = isDone ? "취소" : "완료";
 
   const deleteClickHandler = () => {
-    deleteTask(id);
+    !window.confirm("삭제 확인") || deleteTask(id);
   };
 
   const stateClickHandler = () => {
@@ -11,8 +11,12 @@ function TaskManage({ id, isDone, deleteTask, changeTaskState }) {
 
   return (
     <div>
-      <button onClick={() => deleteClickHandler(id)}>삭제</button>
-      <button onClick={stateClickHandler}>{taskState}</button>
+      <button type="button" onClick={() => deleteClickHandler(id)}>
+        삭제
+      </button>
+      <button type="button" onClick={stateClickHandler}>
+        {taskState}
+      </button>
     </div>
   );
 }

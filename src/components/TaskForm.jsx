@@ -24,12 +24,14 @@ function TaskForm({ addTask }) {
         value={title}
         onChange={getTitle}
         placeholder="제목"
+        required
       ></input>
       <textarea
         type="text"
         value={content}
         onChange={getContent}
         placeholder="내용"
+        required
       ></textarea>
       <button type="submit">할 일 추가</button>
     </form>
