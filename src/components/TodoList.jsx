@@ -1,4 +1,4 @@
-function List({ title, type, list, setlist }) {
+export default function List({ title, type, list, setlist }) {
   const workingList = list.filter((item) => item.isDone === false);
   const doneList = list.filter((item) => item.isDone === true);
   const arr = type === "working" ? workingList : doneList;
@@ -50,5 +50,3 @@ function List({ title, type, list, setlist }) {
     </section>
   );
 }
-
-export default List;

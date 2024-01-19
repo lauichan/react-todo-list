@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form({ list, setlist }) {
+export default function Form({ list, setlist }) {
   let [title, setTitle] = useState("");
   let [content, setContent] = useState("");
 
@@ -48,5 +48,3 @@ function Form({ list, setlist }) {
     </form>
   );
 }
-
-export default Form;
