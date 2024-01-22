@@ -8,8 +8,8 @@ import TODOLIST from "./data";
 
 function App() {
   const [tasks, setTasks] = useState(TODOLIST);
-  const workingList = tasks.filter((task) => task.isDone === false);
-  const doneList = tasks.filter((task) => task.isDone === true);
+  const workingList = tasks.filter((task) => !task.isDone);
+  const doneList = tasks.filter((task) => task.isDone);
 
   const addTask = (title, content) => {
     let newTask = {
