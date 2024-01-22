@@ -18,3 +18,29 @@ src
 │   └── TaskList.jsx         # Todo 리스트 출력 section
 └── App.jsx
 ```
+
+```html
+<!-- Header -->
+<main>
+  <!-- TodoList (Working) -->
+  <section>
+    <ul>
+      <!-- TodoCard -->
+      <li>
+        할일...
+        <!-- TodoManageBtn -->
+        <div>
+          <button>삭제</button>
+          <button>완료</button>
+        </div>
+      </li>
+      <!-- 리스트 반복... -->
+    </ul>
+  </section>
+  <!-- TodoList (Done) -->
+  <section>
+    <!-- 완료 목록... -->
+  </section>
+</main>
+<!-- Footer -->
+```
