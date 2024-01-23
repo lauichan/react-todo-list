@@ -15,6 +15,8 @@ function TaskForm({ addTask }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     addTask(title, content);
+    setTitle("");
+    setContent("");
   };
 
   return (
