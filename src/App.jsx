@@ -13,7 +13,7 @@ function App() {
 
   const addTask = (title, content) => {
     let newTask = {
-      id: Date.now(),
+      id: crypto.randomUUID(),
       title,
       content,
       isDone: false,
