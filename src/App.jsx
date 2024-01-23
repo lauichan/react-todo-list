@@ -18,15 +18,15 @@ function App() {
       content,
       isDone: false,
     };
-    setTasks([...tasks, newTask]);
+    setTasks((prevtasks) => [newTask, ...prevtasks]);
   };
 
   const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+    setTasks((prevtasks) => prevtasks.filter((task) => task.id !== id));
   };
 
   const changeTaskState = (id, bool) => {
-    setTasks(tasks.map((task) => (task.id === id ? { ...task, isDone: !bool } : task)));
+    setTasks((prevtasks) => prevtasks.map((task) => (task.id === id ? { ...task, isDone: !bool } : task)));
   };
 
   return (
