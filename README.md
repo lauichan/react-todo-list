@@ -19,6 +19,8 @@ src
 └── App.jsx
 ```
 
+컴포넌트를 저장할 파일 디렉토리.
+
 ```html
 <!-- Header -->
 <main>
@@ -44,3 +46,7 @@ src
 </main>
 <!-- Footer -->
 ```
+
+- Layout.jsx : Header, Footer
+- TodoList.jsx : TodoList, TodoCard, TodoManageBtn
+- TodoForm.jsx : TodoForm

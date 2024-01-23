@@ -95,6 +95,7 @@ header > h1 {
   border: 1px solid #ddd;
   border-radius: 10px;
   gap: 1.5rem;
+  min-height: 150px;
 }
 
 .todo-list > li:hover {
@@ -103,7 +104,6 @@ header > h1 {
 
 .todo-list > .empty {
   grid-column: span 3;
-  height: 150px;
   align-items: center;
   justify-content: center;
 }
