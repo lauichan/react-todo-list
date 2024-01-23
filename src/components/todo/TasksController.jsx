@@ -23,9 +23,9 @@ function TaskController() {
     }
   };
 
-  const toggleIsDone = (id, bool) => {
+  const toggleIsDone = (id) => {
     console.log(id);
-    setTasks((prevtasks) => prevtasks.map((task) => (task.id === id ? { ...task, isDone: !bool } : task)));
+    setTasks((prevtasks) => prevtasks.map((task) => (task.id === id ? { ...task, isDone: !task.isDone } : task)));
   };
 
   return (

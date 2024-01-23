@@ -35,7 +35,7 @@ function TaskManageBtn({ id, isDone, deleteTask, toggleIsDone }) {
       <button className="delete" type="button" onClick={() => deleteTask(id)}>
         삭제
       </button>
-      <button type="button" onClick={() => toggleIsDone(id, isDone)}>
+      <button type="button" onClick={() => toggleIsDone(id)}>
         {taskState}
       </button>
     </div>
