@@ -1,16 +1,17 @@
 import "./reset.css";
 import "./App.css";
-import { Header, Footer } from "./components/Layout";
+import SiteHeader from "./components/layout/SiteHeader";
+import SiteFooter from "./components/layout/SiteFooter";
 import TaskController from "./components/todo/TasksController";
 
 function App() {
   return (
     <div className="container">
-      <Header />
+      <SiteHeader />
       <main>
         <TaskController />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   );
 }
