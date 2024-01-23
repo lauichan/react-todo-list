@@ -1,9 +1,9 @@
-function TaskList({ tasks, title, deleteTask, changeTaskState }) {
+function TaskList({ tasks, title, deleteTask, toggleIsDone }) {
   let rows = [];
   tasks.forEach((task) => {
     rows.push(
       <TaskCard key={task.id} task={task}>
-        <TaskManageBtn id={task.id} isDone={task.isDone} deleteTask={deleteTask} changeTaskState={changeTaskState} />
+        <TaskManageBtn id={task.id} isDone={task.isDone} deleteTask={deleteTask} toggleIsDone={toggleIsDone} />
       </TaskCard>
     );
   });
