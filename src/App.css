@@ -82,7 +82,6 @@ header > h1 {
 .todo-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(auto-fill, 1fr);
   gap: 1rem;
   margin: 0;
   padding: 0;
@@ -100,6 +99,13 @@ header > h1 {
 
 .todo-list > li:hover {
   background-color: #f6f8fa;
+}
+
+.todo-list > .empty {
+  grid-column: span 3;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo-list > li > h3 {

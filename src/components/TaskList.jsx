@@ -8,10 +8,12 @@ function TaskList({ tasks, title, deleteTask, changeTaskState }) {
     );
   });
 
+  const todo = rows.length === 0 ? <li className="empty">빈 목록.</li> : rows;
+
   return (
     <section className="todo-section">
       <h2 className={title.toLowerCase()}>{title}</h2>
-      <ul className="todo-list">{rows}</ul>
+      <ul className="todo-list">{todo}</ul>
     </section>
   );
 }
