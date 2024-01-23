@@ -18,18 +18,20 @@ function TaskController() {
   };
 
   const deleteTask = (id) => {
-    setTasks((prevtasks) => prevtasks.filter((task) => task.id !== id));
+    if (window.confirm("삭제 확인")) {
+      setTasks((prevtasks) => prevtasks.filter((task) => task.id !== id));
+    }
   };
 
-  const changeTaskState = (id, bool) => {
+  const toggleIsDone = (id, bool) => {
     setTasks((prevtasks) => prevtasks.map((task) => (task.id === id ? { ...task, isDone: !bool } : task)));
   };
 
   return (
     <>
       <TaskForm addTask={addTask} />
-      <TaskList title="Working" tasks={workingList} deleteTask={deleteTask} changeTaskState={changeTaskState} />
-      <TaskList title="Done" tasks={doneList} deleteTask={deleteTask} changeTaskState={changeTaskState} />
+      <TaskList title="Working" tasks={workingList} deleteTask={deleteTask} toggleIsDone={toggleIsDone} />
+      <TaskList title="Done" tasks={doneList} deleteTask={deleteTask} toggleIsDone={toggleIsDone} />
     </>
   );
 }

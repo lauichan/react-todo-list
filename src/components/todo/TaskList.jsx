@@ -7,7 +7,6 @@ function TaskList({ tasks, title, deleteTask, changeTaskState }) {
       </TaskCard>
     );
   });
-
   const todo = rows.length === 0 ? <li className="empty">빈 목록.</li> : rows;
 
   return (
@@ -28,23 +27,15 @@ function TaskCard({ task, children }) {
   );
 }
 
-function TaskManageBtn({ id, isDone, deleteTask, changeTaskState }) {
+function TaskManageBtn({ id, isDone, deleteTask, toggleIsDone }) {
   const taskState = isDone ? "취소" : "완료";
-
-  const handleDeleteBtn = () => {
-    !window.confirm("삭제 확인") || deleteTask(id);
-  };
-
-  const handleIsDoneBtn = () => {
-    changeTaskState(id, isDone);
-  };
 
   return (
     <div>
-      <button className="delete" type="button" onClick={handleDeleteBtn}>
+      <button className="delete" type="button" onClick={() => deleteTask(id)}>
         삭제
       </button>
-      <button type="button" onClick={handleIsDoneBtn}>
+      <button type="button" onClick={() => toggleIsDone(id, isDone)}>
         {taskState}
       </button>
     </div>
